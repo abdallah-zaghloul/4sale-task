@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Modules\User\Exceptions\UserExceptionHandler;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -26,5 +27,19 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+
+    /**
+     * @param $request
+     * @param Throwable $e
+     * @return mixed
+     * @throws Throwable
+     */
+    public function render($request, Throwable $e)
+    {
+        if ($userExceptionHandler = @app(UserExceptionHandler::class))
+            return $userExceptionHandler->render($request, $e);
+        return parent::render($request, $e);
     }
 }
