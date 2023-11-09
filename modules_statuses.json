@@ -1,3 +1,5 @@
 {
-
+    "User": true,
+    "Transaction": true,
+    "Provider": true
 }
