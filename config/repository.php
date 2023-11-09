@@ -15,7 +15,7 @@ return [
     |
     */
     'pagination' => [
-        'limit' => 15
+        'limit' => 50
     ],
 
     /*
@@ -145,10 +145,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Criteria Config
+    | QueryCheck Config
     |--------------------------------------------------------------------------
     |
-    | Settings of request parameters names that will be used by Criteria
+    | Settings of request parameters names that will be used by QueryCheck
     |
     */
     'criteria'   => [
@@ -157,7 +157,7 @@ return [
         | Accepted Conditions
         |--------------------------------------------------------------------------
         |
-        | Conditions accepted in consultations where the Criteria
+        | Conditions accepted in consultations where the QueryCheck
         |
         | Ex:
         |
@@ -240,7 +240,7 @@ return [
             'validators'   => 'Validators',
             'controllers'  => 'Http/Controllers',
             'provider'     => 'RepositoryServiceProvider',
-            'criteria'     => 'Criteria'
+            'criteria'     => 'QueryCheck'
         ]
     ]
 ];

@@ -80,7 +80,7 @@ class MakeCustomModule extends GeneratorCommand
             "repository.generator.paths.validators" => "Validators",
             "repository.generator.paths.controllers" => "Http/Controllers",
             "repository.generator.paths.provider" => "RepositoryServiceProvider",
-            "repository.generator.paths.criteria" => "Criteria",
+            "repository.generator.paths.criteria" => "QueryCheck",
         ]);
     }
 
@@ -112,7 +112,7 @@ class MakeCustomModule extends GeneratorCommand
             $this->updateNameSpace($filePath = "$repositoriesPath/$fileName");
             Str::contains($fileName, "Eloquent") and $this->files->replaceInFile(
                 "use ".RequestCriteria::class,
-                "use {$this->getModuleNameSpace()}\\Criteria\\RequestCriteria",
+                "use {$this->getModuleNameSpace()}\\QueryCheck\\RequestCriteria",
                 $filePath
             );
         });
@@ -155,7 +155,7 @@ class MakeCustomModule extends GeneratorCommand
             "extends BaseCriteria",
             'return parent::apply($model, $repository)',
             '@param mixed'
-        ],"{$this->getModulePath()}/Criteria/RequestCriteria.php");
+        ],"{$this->getModulePath()}/QueryCheck/RequestCriteria.php");
     }
 
 
