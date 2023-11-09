@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "c88ff4c3-68d9-4e43-b71e-4389f153b449",
+		"name": "4Sale-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12703363"
+	},
+	"item": [
+		{
+			"name": "User-Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users?provider=DataProviderY,DataProviderZ&statusCode=authorised,decline,refunded&currency=USD,AED&balanceMin=10&balanceMax=100&paginationCount=1000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "provider",
+							"value": "DataProviderY,DataProviderZ"
+						},
+						{
+							"key": "statusCode",
+							"value": "authorised,decline,refunded"
+						},
+						{
+							"key": "currency",
+							"value": "USD,AED"
+						},
+						{
+							"key": "balanceMin",
+							"value": "10"
+						},
+						{
+							"key": "balanceMax",
+							"value": "100"
+						},
+						{
+							"key": "paginationCount",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
